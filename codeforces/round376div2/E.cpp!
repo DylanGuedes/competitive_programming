@@ -1,0 +1,22 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+
+#define repi(i, j, k)for(int i=j;i<k;++i)
+#define repd(i, j, k)for(int i=j;i>k;i--)
+#define pb push_back
+#define eb emplace_back
+#define all(x) x.begin(),x.end()
+using ll = long long;
+using ii = pair<int, int>;
+using pll = pair<ll, ll>;
+vector<int> myv;
+set<int> myset;
+map<char, int> mymap;
+int n, t, s;
+
+int main()
+{
+        ios::sync_with_stdio(false);
+        return 0;
+}

@@ -1,0 +1,28 @@
+#include <iostream>
+
+using namespace std;
+
+int d, k, a, b, t;
+
+int solve(int idx, int remaining)
+{
+    if (idx == d)
+        return 0;
+
+    int ans = solve(idx+1, remaining)+b;
+    if (remaining > 0) {
+        ans = min(ans, solve(idx+1, remaining-1)+a);
+    } else {
+        ans = min(ans, solve(idx, k)+t);
+    }
+
+    return ans;
+}
+
+int main()
+{
+    std::ios::sync_with_stdio(false);
+    cin >> d >> k >> a >> b >> t;
+    printf("%d\n", solve(0, k));
+    return 0;
+}

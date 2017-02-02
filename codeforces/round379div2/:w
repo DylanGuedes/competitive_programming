@@ -1,0 +1,70 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+
+#define rep(i, j, k)for(int i=j;i<k;++i)
+#define all(x) x.begin(), x.end()
+using ll = long long;
+using ii = pair<int, int>;
+#define repd(i, j, k)for(int i=j;i>=k;i--)
+#define pb push_back
+#define eb emplace_back
+#define emp emplace
+#define ins insert
+#define mp make_pair
+double const eps = 1e-10;
+double const pi = acos(-1);
+
+ii spell1[200005];
+ii spell2[200005];
+int n, m, k, x, s;
+
+int solve(int idx_1, int idx_2)
+{
+        if (idx_1 >= m || idx_1 < 0 || idx_2 >= k || idx_2 < 0)
+                return 0;
+        int arg = max(0, n-spell2[idx_2].first);
+        int mana_required = spell2[idx_2].first + spell1[idx_1].first*(mana_required);
+        if (mana_required > s)
+                return max(solve(idx_1/2, idx_2), solve(idx_1, idx_2/2));
+        else {
+                int total_to_make = arg1-arg2;
+                int ans = spell2[idx_2].second+min(spell1[idx_1].second, x)*(total_to_make);
+                return max(
+        }
+}
+
+bool myfunc1(ii a, ii b)
+{
+        if (a.first == b.first)
+                return a.second < b.second;
+        else
+                return a.first > b.first;
+}
+
+bool myfunc2(ii a, ii b)
+{
+        if (a.first == b.first)
+                return a.second > b.second;
+        else
+                return a.first > b.first;
+}
+
+int main()
+{
+        ios::sync_with_stdio(false);
+
+        cin >> n >> m >> k;
+        cin >> x >> s;
+
+        rep(i, 0, m) cin >> spell1[i].second;
+        rep(i, 0, m) cin >> spell1[i].first;
+        rep(i, 0, k) cin >> spell2[i].second;
+        rep(i, 0, k) cin >> spell2[i].first;
+
+        sort(spell1, spell1+m, myfunc1);
+        sort(spell2, spell1+k, myfunc2);
+
+        cout << solve(m/2, k/2) << "\n";
+        return 0;
+}

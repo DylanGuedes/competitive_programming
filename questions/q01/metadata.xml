@@ -1,0 +1,28 @@
+<meta>
+	<problem>
+		<category>Beginner</category>
+		<timelimit>3</timelimit>
+		<group>Ad Hoc</group>
+		<level>1</level>
+		<label>A</label>
+		<id>q01</id>
+		<subgroup>Easy</subgroup>
+		<event></event>
+	</problem>
+	<title>
+		<es></es>
+		<en_US>Problem's Title</en_US>
+		<pt_BR>Titulo do Problema</pt_BR>
+	</title>
+	<subject>
+		<es></es>
+		<en_US>Problem's Subject</en_US>
+		<pt_BR>Assunto do Problema</pt_BR>
+	</subject>
+	<author>
+		<country>Brazil</country>
+		<university>University</university>
+		<name>Author Name</name>
+		<email>email@email.com</email>
+	</author>
+</meta>
